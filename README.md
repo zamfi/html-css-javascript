@@ -146,7 +146,11 @@ But what happens when the screen is too small to display columns side-by-side? T
 
 ### Practice Project
 
-Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started:
+So far we've only looked at specific examples of one or two elements and made specific changes. It's a good way to learn, but it defeats the whole purpose of actually using CSS: websites are made up of repeated elements, like a list of comments, or many paragraphs, or several "related" links, or a collection of images, etc. And they'll all have the same tag, or you can give them the same class.
+
+That means: you can style **all elements of the same type at once** with a single rule; this is the power of abstraction at its finest!
+
+Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started, with three comments:
 
 ```html
 <div class="comment">
@@ -161,14 +165,14 @@ Let's create and style a pretend comments section for a website. Here's some bas
 
 <div class="comment">
   <span class="author">zamfi</span><span class="date">11:36am, Thu, June 15, 2016</span>
-  <p>Whatevs./p>
+  <p>Whatevs.</p>
   <p>I want to learn JavaScript.</p>
 </div>
 ```
 
 > **Exercises**
 >
->1. Style these comments so they look good. (What looks good is up to you!)
+>1. Style these comments so they look good. (What looks good is up to you!) 
 >2. Add a new comment to the list.
 >3. Add an avatar image to each comment.
 >4. **Challenge**: add a comment input section!
