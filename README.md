@@ -144,7 +144,7 @@ For a hot second, "responsive design" was a big buzzword. But it just means maki
 
 But what happens when the screen is too small to display columns side-by-side? Then you need to start thinking hard about how to display your content. Sometimes just putting elements below each other is fine, but sometimes you need to hide something behind a menu button or do something more complicated. For those cases, you can use "`@media` queries" to specify rules that only apply when the screen is a certain size or orientation. Learn more about `@media` queries at the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) -- but be warned, that pages contains a ton of jargon.
 
-### Practice Project
+### A Practice Project
 
 So far we've only looked at specific examples of one or two elements and made specific changes. It's a good way to learn, but it defeats the whole purpose of actually using CSS: websites are made up of repeated elements, like a list of comments, or many paragraphs, or several "related" links, or a collection of images, etc. And they'll all have the same tag, or you can give them the same class.
 
