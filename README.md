@@ -83,6 +83,8 @@ h1#main {
 
 Use the `.classname` syntax to select all elements with a given class. `tagname.classname` selects only elements of the given tag with the given class. Use `#id` to select the element with the given id.
 
+You can also select elements that are children of other elements, for example: `.comment .author` would apply to all elements that have a class of `author` **within** elements that have a class of `comment`. This is extremely common practice.
+
 Classes let you create consistent styling that you can apply to many different elements across the page. Tag names are set by the HTML standard, but classes are defined by you, the developer. For example, you could use a single class to indicate something like a warning box; each box might have a pastel red background and red bolded text with a red border:
 
 ```css
