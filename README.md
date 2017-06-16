@@ -60,8 +60,10 @@ This rule selects all elements with tag name **h1** and sets their color to blue
  * `font-family: sans-serif;`
  * `text-transform: capitalize;`
  * `text-align: center;`
+ 
+There's a [full list](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) on the web, of course. **Exercise**: Pick an attribute, read the documentation, and ask someone what it means!
 
-Beyond tag names, you can also **select** using the class or id attributes:
+Beyond tag names, you can also **select** using the `class` or `id` attributes:
 
 ```css
 h1.big {
