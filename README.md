@@ -16,27 +16,27 @@ Elements are declared using a **&lt;body&gt;** *some stuff, including other elem
 
 You can put tags inside the content of other tags, as in: `<p>This is a paragraph with a bit of <strong>strong text</strong> inside.</p>`. The tags now have a **parent-child** relationship; the inner tags are called **children** of the outer, **parent** tag (sometimes also called the **container**).
 
-**Exercise:** Open up [codepen.io](codepen.io) and create an `<h1>` header tag in the "HTML" section. Examine the output. Add a `<small>` element inside the `<h1>` element.
+> **Exercise:** Open up [codepen.io](codepen.io) and create an `<h1>` header tag in the "HTML" section. Examine the output. Add a `<small>` element inside the `<h1>` element.
 
-**Exercise:** Create an [&lt;img&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag; the `<img>` tag uses a `src=` attribute to incidte the URL (web address) of the image to be included in the page. Next, create an [anchor (`<a>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) tag (a link!) that points to http://en.wikipedia.org/wiki/Main_Page -- the English language main page of Wikipedia.
+> **Exercise:** Create an [&lt;img&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag; the `<img>` tag uses a `src=` attribute to incidte the URL (web address) of the image to be included in the page. Next, create an [anchor (`<a>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) tag (a link!) that points to http://en.wikipedia.org/wiki/Main_Page -- the English language main page of Wikipedia.
 
-**Exercise:** Read through the [full list of HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element); create a `<p>` tag, a `<ul>` tag (with two or three `<li>` tags as children inside it), and a `<span>` tag. Pick three new tags from the list of all elements to create in your codepen sketch. Put some of those tags inside other tags.
+> **Exercise:** Read through the [full list of HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element); create a `<p>` tag, a `<ul>` tag (with two or three `<li>` tags as children inside it), and a `<span>` tag. Pick three new tags from the list of all elements to create in your codepen sketch. Put some of those tags inside other tags.
 
 #### The Inspector
 
 This is possibly the best part of web development: the Developer Tools. Chrome in particular has great developer tools. They let you look at the **Element Tree** (aka the **DOM**), the full hierarchy of all the elements on a web page. In addition to tags, you'll see attributes and styles.
 
-**Exercise:** Right-click (or control-click, or two-finger-click) on the header element you see in the output window and choose **Inspect** from the context menu. This will open up the Chrome Developer Tools, and you should see highlighted an `<h1>` element.
+> **Exercise:** Right-click (or control-click, or two-finger-click) on the header element you see in the output window and choose **Inspect** from the context menu. This will open up the Chrome Developer Tools, and you should see highlighted an `<h1>` element.
 
 Next we'll load up the [English language main page of Wikipedia](http://en.wikipedia.org/wiki/Main_Page). Open the Developer Tools, and hover over the various elements of the page. What gets highlighted?
 
 Each element on the page has a **margin**, **border**, **padding**, and **content**. What do those mean? (Hint: scroll down to the bottom of the "Styles" panel of the inspector.)
 
-**Research Question**: Notice that many elements have `class` and `id` attributes. What do those mean? How many elements can have the same `class` attribute? The same `id` attribute?
+> **Research Question**: Notice that many elements have `class` and `id` attributes. What do those mean? How many elements can have the same `class` attribute? The same `id` attribute?
 
-**Research Question**: is the HTML source code of the file always the same as the element tree? 
+> **Research Question**: is the HTML source code of the file always the same as the element tree? 
 
-**Exercise**: Browse to your favorite web site, and inspect the visually-largest element on the page. What type of element (tag?) is it? What styling does it have? What tags are used to enclose textual content?
+> **Exercise**: Browse to your favorite web site, and inspect the visually-largest element on the page. What type of element (tag?) is it? What styling does it have? What tags are used to enclose textual content?
 
 ### CSS
 
@@ -52,18 +52,18 @@ h1 {
 
 This rule selects all elements with tag name **h1** and sets their color to blue. Try it in codepen, and you should see the color of your header element change.
 
-**Exercise**: Explore the following CSS attributes by setting them individually in the `h1` rule you created above:
-
- * `background: white;`
- * `font-size: 200%;`
- * `margin: 25%;`
- * `padding: 20px 20px 20px 20px;`
- * `border: 3px;`
- * `border-radius: 10px;`
- * `width: 50%;`
- * `font-family: sans-serif;`
- * `text-transform: capitalize;`
- * `text-align: center;`
+>**Exercise**: Explore the following CSS attributes by setting them individually in the `h1` rule you created above:
+>
+> * `background: white;`
+> * `font-size: 200%;`
+> * `margin: 25%;`
+> * `padding: 20px 20px 20px 20px;`
+> * `border: 3px;`
+> * `border-radius: 10px;`
+> * `width: 50%;`
+> * `font-family: sans-serif;`
+> * `text-transform: capitalize;`
+> * `text-align: center;`
  
 There's a [full list](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) on the web, of course. **Exercise**: Pick an attribute, read the documentation, and ask someone what it means!
 
@@ -95,9 +95,9 @@ Classes let you create consistent styling that you can apply to many different e
 
 Then, creating a warning box is as easy as including `warningBox` in the `class` attribute of any element.
 
-**Exercise**: Define a new class in CSS with a bunch of attributes. Create a new paragraph tag `<p>`, and set its class attribute to the class you just created, e.g., `<p class="my-fancy-class">`.
+> **Exercise**: Define a new class in CSS with a bunch of attributes. Create a new paragraph tag `<p>`, and set its class attribute to the class you just created, e.g., `<p class="my-fancy-class">`.
 
-**Research Question**: What happens if you give an element more than one CSS class?
+> **Research Question**: What happens if you give an element more than one CSS class?
 
 One last fun bit about styling: CSS also has "pseudo-classes", these are selectors that act kind of like classes, but can trigger on interactions. For example:
 
@@ -112,7 +112,7 @@ h1:hover {
 
 These two rules together will change the color of headers when you hover over them.
 
-**Exercise**: What happens when you add a `transition: color 2s` rule to `h1` above?
+> **Exercise**: What happens when you add a `transition: color 2s` rule to `h1` above?
 
 ### Layout
 
@@ -120,19 +120,19 @@ Here the CSS also lets you specify layout rules, but not all tags follow exactly
 
 Some tags are "block" elements, and others are "inline" elements. Block elements take up the whole width of their parent element, like paragraphs and headers. Inline elements don't, they flow naturally within their parent element. You can control the block/inline nature of elements in CSS using the `display: block` or `display: inline` declaration.
 
-**Exercise**: `<h1>` is a block element. Add a `display: inline` declaration to your CSS rule for `h1` -- what happens?
+> **Exercise**: `<h1>` is a block element. Add a `display: inline` declaration to your CSS rule for `h1` -- what happens?
 
-**Exercise**: `<strong>` is an inline element. Consider the following HTML: `<p>This is a paragraph with <strong>strong text</strong> inside it.</p>`. What happens when you create a `strong` CSS rule with `display: block`?
+> **Exercise**: `<strong>` is an inline element. Consider the following HTML: `<p>This is a paragraph with <strong>strong text</strong> inside it.</p>`. What happens when you create a `strong` CSS rule with `display: block`?
 
 Historically, websites used "absolutely-positioned" block elements with `width` and `margin` and positional properties like `left` and `right` to create columns and other structures. This was always a pain to deal with and error-prone, especially as different browsers often had slightly different behavior. But you should understand it at least a bit:
 
-**Exercise**: Create two block-level elements, perhaps `<div>` elements, with `id=left` and `id=right` respectively. Set `position: absolute` on both of them. Set `width: 400px;` on the left element, and set `left: 400px;` on the right. How does it look? (Columns, right! Kind of? What happens when you changed the width of your window?)
+> **Exercise**: Create two block-level elements, perhaps `<div>` elements, with `id=left` and `id=right` respectively. Set `position: absolute` on both of them. Set `width: 400px;` on the left element, and set `left: 400px;` on the right. How does it look? (Columns, right! Kind of? What happens when you changed the width of your window?)
 
 Fortunately, these days, more sites are using the flexbox model, which is a bit like auto-layout. There's a ton to learn here, but the upshot is this: set a parent container to `display: flex` and the child elements will automatically be set into columns.
 
-**Exercise**: Create a `<div id="container">` element with an `<h1>` element, an `<img>` element, and a `<p>` element inside it. Set `display: flex` on `#container` in your CSS.
+> **Exercise**: Create a `<div id="container">` element with an `<h1>` element, an `<img>` element, and a `<p>` element inside it. Set `display: flex` on `#container` in your CSS.
 
-**Research Question**: Visit this [comprehensive guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to learn about what the layout possibilities are. Think about which model might be appropriate to a portfolio site! Columns? Rows? Wrapping? Sizes?
+> **Research Question**: Visit this [comprehensive guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to learn about what the layout possibilities are. Think about which model might be appropriate to a portfolio site! Columns? Rows? Wrapping? Sizes?
 
 #### What about "responsive design"?
 
@@ -162,12 +162,12 @@ Let's create and style a pretend comments section for a website. Here's some bas
 </div>
 ```
 
-Exercises:
-
-1. Style these comments so they look good. (What looks good is up to you!)
-2. Add a new comment to the list.
-3. Add an avatar image to each comment.
-3. **Challenge**: add a comment input section!
+> **Exercises**
+>
+>1. Style these comments so they look good. (What looks good is up to you!)
+>2. Add a new comment to the list.
+>3. Add an avatar image to each comment.
+>4. **Challenge**: add a comment input section!
 
 ### Alternative Project / Homework
 
