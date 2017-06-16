@@ -157,7 +157,7 @@ That means: you can style **all elements of the same type at once** with a singl
 Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started, with three comments:
 
 ```html
-<div class="comments>
+<div class="comments">
   <div class="comment">
     <span class="author">zamfi</span><span class="date">11:15am, Thu, June 15, 2016</span>
     <p>This is the lamest exercise I've ever encountered. Can't we do something cool like animations with keyframes?</p>
