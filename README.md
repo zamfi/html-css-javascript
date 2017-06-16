@@ -130,7 +130,11 @@ Some tags are "block" elements, and others are "inline" elements. Block elements
 
 Historically, websites used "absolutely-positioned" block elements with `width` and `margin` and positional properties like `left` and `right` to create columns and other structures. This was always a pain to deal with and error-prone, especially as different browsers often had slightly different behavior. But you should understand it at least a bit:
 
-> **Exercise**: Create two block-level elements, perhaps `<div>` elements, with `id=left` and `id=right` respectively. Set `position: absolute` on both of them. Set `width: 400px;` on the left element, and set `left: 400px;` on the right. How does it look? (Columns, right! Kind of? What happens when you changed the width of your window?)
+> **Exercise**: Create two block-level elements, perhaps `<div>` elements, with `id=left` and `id=right` respectively. 
+> 
+> Set `position: absolute` on both of them, then set `width: 400px;` on the left element, and set `left: 400px;` on the right. 
+> 
+> How does it look? (Columns, right! Kind of? What happens when you change the width of your window?)
 
 Fortunately, these days, more sites are using the flexbox model, which is a bit like auto-layout. There's a ton to learn here, but the upshot is this: set a parent container to `display: flex` and the child elements will automatically be set into columns.
 
@@ -153,20 +157,22 @@ That means: you can style **all elements of the same type at once** with a singl
 Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started, with three comments:
 
 ```html
-<div class="comment">
-  <span class="author">zamfi</span><span class="date">11:15am, Thu, June 15, 2016</span>
-  <p>This is the lamest exercise I've ever encountered. Can't we do something cool like animations with keyframes?</p>
-</div>
+<div class="comments>
+  <div class="comment">
+    <span class="author">zamfi</span><span class="date">11:15am, Thu, June 15, 2016</span>
+    <p>This is the lamest exercise I've ever encountered. Can't we do something cool like animations with keyframes?</p>
+  </div>
 
-<div class="comment">
-  <span class="author">bhaynes</span><span class="date">11:35am, Thu, June 15, 2016</span>
-  <p>At least it's practical, I guess?</p>
-</div>
+  <div class="comment">
+    <span class="author">bhaynes</span><span class="date">11:35am, Thu, June 15, 2016</span>
+    <p>At least it's practical, I guess?</p>
+  </div>
 
-<div class="comment">
-  <span class="author">zamfi</span><span class="date">11:36am, Thu, June 15, 2016</span>
-  <p>Whatevs.</p>
-  <p>I want to learn JavaScript.</p>
+  <div class="comment">
+    <span class="author">zamfi</span><span class="date">11:36am, Thu, June 15, 2016</span>
+    <p>Whatevs.</p>
+    <p>I want to learn JavaScript.</p>
+  </div>
 </div>
 ```
 
