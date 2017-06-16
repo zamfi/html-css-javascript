@@ -134,7 +134,7 @@ Fortunately, these days, more sites are using the flexbox model, which is a bit 
 
 **Research Question**: Visit this [comprehensive guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to learn about what the layout possibilities are. Think about which model might be appropriate to a portfolio site! Columns? Rows? Wrapping? Sizes?
 
-#### "Responsive" design?
+#### What about "responsive design"?
 
 For a hot second, "responsive design" was a big buzzword. But it just means making pages that display well on a variety of screen sizes. For the most part, this is not that hard as long as most of your page is taken up by elements that grow and shrink with the screen size.
 
@@ -142,4 +142,34 @@ But what happens when the screen is too small to display columns side-by-side? T
 
 ### Practice Project
 
+Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started:
+
+```html
+<div class="comment">
+  <span class="author">zamfi</span><span class="date">11:15am, Thu, June 15, 2016</span>
+  <p>This is the lamest exercise I've ever encountered. Can't we do something cool like animations with keyframes?</p>
+</div>
+
+<div class="comment">
+  <span class="author">bhaynes</span><span class="date">11:35am, Thu, June 15, 2016</span>
+  <p>At least it's practical, I guess?</p>
+</div>
+
+<div class="comment">
+  <span class="author">zamfi</span><span class="date">11:36am, Thu, June 15, 2016</span>
+  <p>Whatevs./p>
+  <p>I want to learn JavaScript.</p>
+</div>
+```
+
+Exercises:
+
+1. Style these comments so they look good. (What looks good is up to you!)
+2. Add a new comment to the list.
+3. Add an avatar image to each comment.
+3. **Challenge**: add a comment input section!
+
+### Alternative Project / Homework
+
+If you're feeling confident, get started on creating a portfolio page for yourself!
 
