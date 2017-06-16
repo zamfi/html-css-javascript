@@ -40,9 +40,9 @@ Each element on the page has a **margin**, **border**, **padding**, and **conten
 
 ### CSS
 
-CSS is the styling information for the web. If HTML is the blueprint, CSS is the paint colors, window trim, and tile in the kitchen.
+CSS specifies styling information for your HTML. If HTML is the blueprint, then CSS is the paint colors, window trim, and tile in the kitchen.
 
-CSS style rules consist of a **selector** that says which elements the rule applies to, and a collection of **declarations** that give actual style information. For example:
+CSS "style rules" consist of a **selector** that says which elements the rule applies to, and a collection of **declarations** that give actual style information. For example:
 
 ```css
 h1 {
@@ -54,7 +54,7 @@ This rule selects all elements with tag name **h1** and sets their color to blue
 
 >**Exercise**: Explore the following CSS attributes by setting them individually in the `h1` rule you created above:
 >
-> * `background: white;`
+> * `background: orange;`
 > * `font-size: 200%;`
 > * `margin: 25%;`
 > * `padding: 20px 20px 20px 20px;`
@@ -83,12 +83,12 @@ h1#main {
 
 Use the `.classname` syntax to select all elements with a given class. `tagname.classname` selects only elements of the given tag with the given class. Use `#id` to select the element with the given id.
 
-You can also select elements that are children of other elements, for example: `.comment .author` would apply to all elements that have a class of `author` **within** elements that have a class of `comment`. This is extremely common practice.
+You can also select elements that are children of other elements, for example: `.comment .author { ... }` would apply to all elements that have a class of `author` **within** elements that have a class of `comment`. This is extremely common practice.
 
-Classes let you create consistent styling that you can apply to many different elements across the page. Tag names are set by the HTML standard, but classes are defined by you, the developer. For example, you could use a single class to indicate something like a warning box; each box might have a pastel red background and red bolded text with a red border:
+Classes let you create consistent styling rules that you can apply to many different elements across the page. Tag names are set by the HTML standard, but classes are defined by you, the developer. For example, you could use a single class to indicate something like a warning box; each box might have a pastel red background and red bolded text with a red border:
 
 ```css
-.warningBox {
+.warning-box {
   background: #fdb;
   color: red;
   font-weight: bold;
@@ -97,7 +97,7 @@ Classes let you create consistent styling that you can apply to many different e
 }
 ```
 
-Then, creating a warning box is as easy as including `warningBox` in the `class` attribute of any element.
+Then, creating a warning box is as easy as including `warning-box` in the `class` attribute of any element.
 
 > **Exercise**: Define a new class in CSS with a bunch of attributes. Create a new paragraph tag `<p>`, and set its class attribute to the class you just created, e.g., `<p class="my-fancy-class">`.
 
@@ -120,15 +120,15 @@ These two rules together will change the color of headers when you hover over th
 
 ### Layout
 
-Here the CSS also lets you specify layout rules, but not all tags follow exactly the same rules.
+In addition to style, CSS also lets you specify layout rules. But not all tags follow exactly the same rules.
 
-Some tags are "block" elements, and others are "inline" elements. Block elements take up the whole width of their parent element, like paragraphs and headers. Inline elements don't, they flow naturally within their parent element. You can control the block/inline nature of elements in CSS using the `display: block` or `display: inline` declaration.
+Some tags are "block" elements, and others are "inline" elements. Block elements take up the whole width of their parent element, like paragraphs and headers. Inline elements don't, they flow naturally within their parent element, like images and links. You can change the default block/inline nature of elements in CSS using the `display: block` or `display: inline` declaration.
 
 > **Exercise**: `<h1>` is a block element. Add a `display: inline` declaration to your CSS rule for `h1` -- what happens?
 
 > **Exercise**: `<strong>` is an inline element. Consider the following HTML: `<p>This is a paragraph with <strong>strong text</strong> inside it.</p>`. What happens when you create a `strong` CSS rule with `display: block`?
 
-Historically, websites used "absolutely-positioned" block elements with `width` and `margin` and positional properties like `left` and `right` to create columns and other structures. This was always a pain to deal with and error-prone, especially as different browsers often had slightly different behavior. But you should understand it at least a bit:
+Historically, websites used "absolutely-positioned" block elements with `width` and `margin` and positional properties like `left` and `right` to create columns and other structures. This was always a pain to deal with and error-prone, especially as different browsers often had slightly different behavior. But you should understand it at least a bit.
 
 > **Exercise**: Create two block-level elements, perhaps `<div>` elements, with `id=left` and `id=right` respectively. 
 > 
@@ -136,9 +136,9 @@ Historically, websites used "absolutely-positioned" block elements with `width` 
 > 
 > How does it look? (Columns, right! Kind of? What happens when you change the width of your window?)
 
-Fortunately, these days, more sites are using the flexbox model, which is a bit like auto-layout. There's a ton to learn here, but the upshot is this: set a parent container to `display: flex` and the child elements will automatically be set into columns.
+Fortunately, these days, more sites are using the new **flexbox** model, which is a bit like auto-layout. There are a lot of options here, but the upshot is this: set a parent container to `display: flex` and the child elements will automatically be set into columns.
 
-> **Exercise**: Create a `<div id="container">` element with an `<h1>` element, an `<img>` element, and a `<p>` element inside it. Set `display: flex` on `#container` in your CSS.
+> **Exercise**: Create a `<div id="container">` element with an `<h1>` element, an `<img>` element, and a `<p>` element inside it. Set `display: flex` on `#container` in your CSS. What do you see?
 
 > **Research Question**: Visit this [comprehensive guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) to learn about what the layout possibilities are. Think about which model might be appropriate to a portfolio site! Columns? Rows? Wrapping? Sizes?
 
@@ -152,7 +152,7 @@ But what happens when the screen is too small to display columns side-by-side? T
 
 So far we've only looked at specific examples of one or two elements and made specific changes. It's a good way to learn, but it defeats the whole purpose of actually using CSS: websites are made up of repeated elements, like a list of comments, or many paragraphs, or several "related" links, or a collection of images, etc. And they'll all have the same tag, or you can give them the same class.
 
-That means: you can style **all elements of the same type at once** with a single rule; this is the power of abstraction at its finest!
+That means: you can style **all elements of the same type at once** with a single rule; this the power of abstraction!
 
 Let's create and style a pretend comments section for a website. Here's some basic HTML to get us started, with three comments:
 
@@ -170,7 +170,7 @@ Let's create and style a pretend comments section for a website. Here's some bas
 
   <div class="comment">
     <span class="author">zamfi</span><span class="date">11:36am, Thu, June 15, 2016</span>
-    <p>Whatevs.</p>
+    <p>Psh, whatevs.</p>
     <p>I want to learn JavaScript.</p>
   </div>
 </div>
@@ -178,12 +178,12 @@ Let's create and style a pretend comments section for a website. Here's some bas
 
 > **Exercises**
 >
->1. Style these comments so they look good. (What looks good is up to you!) 
+>1. Style these comments so they look good. (What looks good is up to you!) Remember that you can move stuff around using absolute positioning and `left` and `right` declarations.
 >2. Add a new comment to the list.
 >3. Add an avatar image to each comment.
->4. **Challenge**: add a comment input section!
+>4. **Challenge**: add a comment input section.
 
 ### Alternative Project / Homework
 
-If you're feeling confident, get started on creating a portfolio page for yourself!
+Once you're feeling confident, get started on creating a portfolio page for yourself! What high-level containers will you need? Perhaps a div for each piece? Then an image and some details inside? Links?
 
