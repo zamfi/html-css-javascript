@@ -187,3 +187,101 @@ Let's create and style a pretend comments section for a website. Here's some bas
 
 Once you're feeling confident, get started on creating a portfolio page for yourself! What high-level containers will you need? Perhaps a div for each piece? Then an image and some details inside? Links?
 
+
+## Day 2
+
+In which we explore JavaScript and its role in adding interactivity to web pages.
+
+### Basic JavaScript
+
+There's a lot to programming in JavaScript (or any language), but if you remember 4 things you'll do well:
+
+1.  To actually **do** something, you need to run a command, like this: `doSomething()`. Sometimes you'll need to tell your browser **what** to do that thing **with**: `doSomething(14)` or `doSomething("hi", "there")`. Those things in quotes are usually text, or CSS classes or ids, or tag names, etc. Functions don't have quotes around them; data often does.
+
+2.  You can write your own functions, and often have to, like this:
+    ```javascript
+    function doThreeThings() {
+      doOneThing(12);
+      doAnotherThing(13);
+      doOneMoreThing("blah");
+    }
+    ```
+    This function is called `doThreeThings` and it runs the three functions inside the `{}`'s.
+
+3. You can "remember" things by assigning them to variables, like this: `var headerElement = $('#main-header')`. This takes the result of calling the `$` function on the value `'#main-header'` and puts whatever that is in a variable called `headerElement`. Then you can just refer to `headerElement` and do stuff to it later.
+
+4. Some variables (like the `headerElement` above) have their **own** functions that you can call, like: `headerElement.toggleClass('purple')`. This line says **call the `toggleClass` function that lives on the `headerElement` variable with the data `'purple'`**.
+
+### Using jQuery
+
+JavaScript comes with some built-in tools for handling events and changing your web page, but they're hard to use and clunky. Instead, many people use a tool called [jQuery](https://jquery.com). jQuery allows you to easily find elements in your HTML page and change them, as well as trigger actions to happen based on events.
+
+jQuery's functionality is exposed through the `$` function. For example, `$('#main-header')` gets the HTML element whose `id` attribute is set to `main-header`, just like a CSS rule with the selector `#main-header` will apply to all elements whose `id` attribute is `main-header`.
+
+To use jQuery, you generally need a trigger. One such trigger is provided by the `setTimeout` and `setInterval` functions. `setTimeout` schedules a function to be run later, like this:
+
+```javascript
+function togglePurpleClass() {
+  $('.purpleable').toggleClass('purple');
+}
+
+setTimeout(togglePurpleClass, 2000);
+```
+
+The code above defines the `togglePurpleClass` function, which finds all elements with class `purpleable` and toggles whether they also have the class `purple`. Then it calls `setTimeout` to say **run this function in 2000 milliseconds (i.e., 2 seconds).**
+
+> **Exercise**: Try it! Create a new codepen file with a single `<p class="purpleable">` tag with some content. Define a CSS rule `.purple { color: purple; }` that makes elements with class `purple` be rendered with purple text. Then copy the JavaScript code above.
+
+> **Experiment**: What happens if you use `setInterval` instead of `setTimeout`? (What do you think will happen?) What if you toggle a different class name?
+
+### Events
+
+Timeouts are one way of triggering actions, but more interesting are triggers caused by human users! One of the most common is `click` events. You can listen to events using the jQuery `on` function, but there's a trick: you can only start listening for events after the page has been constructed. Here's an example that handles this for us:
+
+```javascript
+function togglePurpleClass() {
+  $('.purpleable').toggleClass('purple');
+}
+
+function setup() {
+  $('.purpleable').on('click', togglePurpleClass);
+}
+
+$(setup);
+```
+
+The code above keeps the `togglePurpleClass` function from before, but adds a `setup` function that actually attaches the `togglePurpleClass` function to the `click` event on anything `.purpleable`. 
+
+Note that `click` is just one event -- and there are [very many](https://developer.mozilla.org/en-US/docs/Web/Events). 
+
+> **Exercise**: Take a look through the [full list](https://developer.mozilla.org/en-US/docs/Web/Events) of events and pick one to replace `click` with in the example above. Try one of the "Focus Events" or "Mouse Events" first.
+
+### Other Manipulations
+
+In addition to toggling classes, you can use jQuery to manipulate HTML elements directly. One of the most common manipulations is to replace the content of an element, using the `.html()` function. For example, `$('.purpleable').html("Purple purple purple.")` would replace the content of every element of class `purpleable` with "Purple purple purple."
+
+You can also apply CSS directly, which can be useful for moving single elements. For example:
+
+```javascript
+function moveButton() {
+  $('button').css({ left: 100*Math.random(), top: 100*Math.random() });
+}
+
+function setup() {
+  $('button').on('mouseover', moveButton);
+}
+
+$(setup);
+```
+
+This code sets the `left` and `top` properties to random values between 0 and 100 whenever the mouse moves over them, using the `{}` object syntax.
+
+> **Exercise**: Create a codepen example with the above code, creating the complementary HTML and CSS.
+
+### SquareSpace integration
+
+You can inject JavaScript & jQuery into your squarespace pages by including `<script>` tags in the header section.
+
+### Putting It Together
+
+What do you want to build? Let's start!
