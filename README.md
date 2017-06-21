@@ -196,7 +196,9 @@ In which we explore JavaScript and its role in adding interactivity to web pages
 
 There's a lot to programming in JavaScript (or any language), but if you remember 4 things you'll do well:
 
-1.  To actually **do** something, you need to run a command, like this: `doSomething()`. Sometimes you'll need to tell your browser **what** to do that thing **with**: `doSomething(14)` or `doSomething("hi", "there")`. Those things in quotes are usually text, or CSS classes or ids, or tag names, etc. Functions don't have quotes around them; data often does.
+1.  To actually **do** something, you need to run a command, like this: `doSomething()`. Running a command is also sometimes referred to as "calling a function".
+
+    Sometimes you'll need to tell your browser **what** to do that thing **with**: `doSomething(14)` or `doSomething("hi", "there")`. Those things in quotes are usually text, or CSS classes or ids, or tag names, etc. Functions don't have quotes around them; data often does. Other names for data: **parameters** or **arguments**.
 
 2.  You can write your own functions, and often have to, like this:
     ```javascript
@@ -208,9 +210,20 @@ There's a lot to programming in JavaScript (or any language), but if you remembe
     ```
     This function is called `doThreeThings` and it runs the three functions inside the `{}`'s.
 
-3. You can "remember" things by assigning them to variables, like this: `var headerElement = $('#main-header')`. This takes the result of calling the `$` function on the value `'#main-header'` and puts whatever that is in a variable called `headerElement`. Then you can just refer to `headerElement` and do stuff to it later.
+3.  You can "remember" things by assigning them to variables, like this: 
+    ```javascript
+    var headerElement = $('#main-header')
+    ```
+    This takes the result of calling the `$` function on the value `'#main-header'` and puts whatever that is in a variable called `headerElement`. Then you can just refer to `headerElement` and do stuff to it later:
+    ```javacsript
+    doSomething(headerElement);
+    ```
 
-4. Some variables (like the `headerElement` above) have their **own** functions that you can call, like: `headerElement.toggleClass('purple')`. This line says **call the `toggleClass` function that lives on the `headerElement` variable with the data `'purple'`**.
+4.  Some variables (like the `headerElement` above) have their **own** functions that you can call, like: 
+    ```javascript
+    headerElement.toggleClass('purple')
+    ```
+    That line says **call the `toggleClass` function that lives on the `headerElement` variable with the data `'purple'`**.
 
 ### Using jQuery
 
