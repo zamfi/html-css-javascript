@@ -16,7 +16,7 @@ Elements are declared using a **&lt;body&gt;** *some stuff, including other elem
 
 You can put tags inside the content of other tags, as in: `<p>This is a paragraph with a bit of <strong>strong text</strong> inside.</p>`. The tags now have a **parent-child** relationship; the inner tags are called **children** of the outer, **parent** tag (sometimes also called the **container**).
 
-> **Exercise:** Open up [codepen.io](codepen.io) and create an `<h1>` header tag in the "HTML" section. Examine the output. Add a `<small>` element inside the `<h1>` element.
+> **Exercise:** Open up [codepen.io](http://codepen.io) and create an `<h1>` header tag in the "HTML" section. Examine the output. Add a `<small>` element inside the `<h1>` element.
 
 > **Exercise:** Create an [&lt;img&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag; the `<img>` tag uses a `src=` attribute to incidte the URL (web address) of the image to be included in the page. Next, create an [anchor (`<a>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) tag (a link!) that points to http://en.wikipedia.org/wiki/Main_Page -- the English language main page of Wikipedia.
 
@@ -293,7 +293,49 @@ This code sets the `left` and `top` properties to random values between 0 and 10
 
 ### SquareSpace integration
 
-You can inject JavaScript & jQuery into your squarespace pages by including `<script>` tags in the header section.
+You can run JavaScript in many places in SquareSpace. Easiest is to create a "code" block on your page, and place a `<script>` tag inside there. Typically you'll want some other HTML elements in there too to manipulate with your script. For example, the following code embeds a [p5.js](http://p5js.org) script into your page:
+
+```html
+<div id="my-sketch"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
+<script data-tag="@fs-sketch.js">
+  function setup() {
+    var canvas = createCanvas(400, 400);
+    canvas.parent('my-sketch');
+  }
+
+  var tension = 0;
+  var targetX = 0, targetY = 0;
+  var rate = 0.1;
+
+  function draw() {
+    background(255);
+    translate(0.5,0.5);
+
+    if (mouseX < 10 || mouseX > width - 10 ||
+      mouseY < 10 || mouseY > height - 10) {
+      tension = tension * (1 - rate);
+    } else {
+      tension = tension * (1 - rate) + rate;
+    }
+
+    targetX = targetX * (1 - rate) + constrain(mouseX, 10, width - 10) * rate;
+    targetY = targetY * (1 - rate) + constrain(mouseY, 10, height - 10) * rate;
+
+    noFill();
+    for (var i = 1; i < width / 10; i++) {
+      bezier(i * 10, 10,
+        targetX * tension + i * 10 * (1 - tension),
+        targetY * tension + height / 2 * (1 - tension),
+        targetX * tension + i * 10 * (1 - tension),
+        targetY * tension + height / 2 * (1 - tension),
+        i * 10, height - 10);
+    }
+  }
+</script>
+```
+
+Note the creation of a `<div>` element with `id=my-sketch` and then the `canvas.parent('my-sketch')` command that tells p5 to place your canvas inside the `my-sketch` element. (Without these additions, you'll probably end up with your canvas stuck at the end of your page after the footer.)
 
 ### Putting It Together
 
