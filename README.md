@@ -2,6 +2,10 @@
 
 Enacted at CCA, June 16 & 21, 2017.
 
+[Day 1](#Day_1) focused on HTML & CSS.
+
+[Day 2](#Day_2) focused on JavaScript.
+
 ## Day 1
 
 In which we uncover the basics of HTML and CSS, using [codepen.io](codepen.io) as a platform for experimentation.
