@@ -337,6 +337,60 @@ You can run JavaScript in many places in SquareSpace. Easiest is to create a "co
 
 Note the creation of a `<div>` element with `id=my-sketch` and then the `canvas.parent('my-sketch')` command that tells p5 to place your canvas inside the `my-sketch` element. (Without these additions, you'll probably end up with your canvas stuck at the end of your page after the footer.)
 
+You can also manipulate HTML elements directly in SquareSpace. For example, the code below takes the last word of the `<strong>` element in the header and surrounds each character in a `<span>` with a unique id, storing that id as well as "speed" information (in the form of `vLeft` and `vRight`) in the `locationsById` object. Then, every frame, the position and speed of each character are updated by the `dance` function.
+
+Try it out! Include it in the "advanced" block of your header settings. (And don't feel like you have to understand all parts of the code to make changes!)
+
+```html
+<style>
+.separatechar {
+  display: inline-block;
+  position: relative;
+ }
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="   crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+var locationsById = {};
+
+function handleSingleChar(c, index) {
+  locationsById['separatechar-'+index] = {
+    left: 0, 
+    top: 0, 
+    vLeft: (index+1)/15, 
+    vTop: (index+1)/10
+  }; 
+  
+  return "<span class='separatechar' id='separatechar-"+index+"'>"+c+"</span>";
+}
+
+$(function() {
+  var elt = $('.desc-wrapper strong');
+  var currentParts = elt.html().split(/ +/g); // split existing text by spaces
+  var lastWord = currentParts[currentParts.length-1];
+  currentParts[currentParts.length-1] = lastWord.split('').map(handleSingleChar).join('');
+  elt.html(currentParts.join(" "));
+  
+  setTimeout(function() {
+    requestAnimationFrame(dance); // call dance on next frame
+  }, 3000);
+});
+  
+function dance() {
+  Object.keys(locationsById).forEach(function(k) {
+    var data = locationsById[k];
+    data.vLeft += (Math.random()-0.5) / 20;
+    data.vTop += (Math.random()-0.5) / 20;
+    data.left += data.vLeft;
+    data.top += data.vTop;
+    $('#'+k).css(data);
+  });
+  
+  requestAnimationFrame(dance); // call dance on next frame
+}
+</script>
+```
+
 ### Putting It Together
 
 What do you want to build? Let's start!
