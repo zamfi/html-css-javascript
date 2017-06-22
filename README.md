@@ -2,9 +2,9 @@
 
 Enacted at CCA, June 16 & 21, 2017.
 
-[Day 1](#Day_1) focused on HTML & CSS.
+[Day 1](#day-1) focused on HTML & CSS.
 
-[Day 2](#Day_2) focused on JavaScript.
+[Day 2](#day-2) focused on JavaScript.
 
 ## Day 1
 
