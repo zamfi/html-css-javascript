@@ -8,7 +8,7 @@ Enacted at CCA, June 16 & 21, 2017.
 
 ## Day 1
 
-In which we uncover the basics of HTML and CSS, using [codepen.io](codepen.io) as a platform for experimentation.
+In which we uncover the basics of HTML and CSS, using [codepen.io](http://codepen.io) as a platform for experimentation.
 
 ### Basic HTML
 
@@ -24,7 +24,7 @@ You can put tags inside the content of other tags, as in: `<p>This is a paragrap
 
 > **Exercise:** Create an [&lt;img&gt;](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) tag; the `<img>` tag uses a `src=` attribute to incidte the URL (web address) of the image to be included in the page. Next, create an [anchor (`<a>`)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a) tag (a link!) that points to http://en.wikipedia.org/wiki/Main_Page -- the English language main page of Wikipedia.
 
-> **Exercise:** Read through the [full list of HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element); create a `<p>` tag, a `<ul>` tag (with two or three `<li>` tags as children inside it), and a `<span>` tag. Pick three new tags from the list of all elements to create in your codepen sketch. Put some of those tags inside other tags.
+> **Exercise:** Read through the [full list of HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element); create a `<p>` tag, a `<ul>` tag (with two or three `<li>` tags as children inside it), and a `<span>` tag. Pick three new tags from the list of all elements to create in your codepen sketch: `<input>`, `<form>`, `<a>`, `<b>`, `<i>`, and `<table>` are all good choices! Put some of those tags inside other tags.
 
 #### The Inspector
 
